@@ -1,0 +1,19 @@
+[user]
+  name = Hunter Tunnicliff
+  email = {{ SET EMAIL }}
+[pull]
+  rebase = false
+[init]
+  defaultBranch = main
+[core]
+  editor = nano
+[alias]
+  s = status
+  br = branch
+  c = commit -m
+  co = checkout
+  d = diff
+  l = log
+  p = pull
+  last = log -1 HEAD
+  unstage = reset HEAD --
