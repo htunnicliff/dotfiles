@@ -1,0 +1,9 @@
+[user]
+  name = Hunter Tunnicliff
+  email = htunnicliff@hey.com
+[pull]
+  rebase = false
+[init]
+  defaultBranch = main
+[core]
+  editor = nano
