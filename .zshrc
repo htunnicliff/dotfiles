@@ -1,5 +1,21 @@
-# Enable completions
-autoload -U compinit; compinit
+fpath+=~/.zfunc
+
+# Enable Homebrew ZSH completions
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# Enable ZSH completions
+autoload -Uz compinit
+compinit
+
+# Enable `pure` prompt
+autoload -U promptinit; promptinit
+prompt pure
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -9,7 +25,7 @@ else
 fi
 
 # Autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 # Git aliases
 alias s="git status"
@@ -22,7 +38,6 @@ alias p="git pull"
 alias last="git log -1 HEAD"
 alias unstage="git reset HEAD --"
 
-# NVM completions
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
