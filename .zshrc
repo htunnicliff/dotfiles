@@ -11,6 +11,10 @@ then
   compinit
 fi
 
+export DENO_INSTALL="/Users/hunter/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+
 # Enable ZSH completions
 autoload -Uz compinit
 compinit
