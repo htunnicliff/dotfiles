@@ -52,5 +52,14 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 alias artisan='[ -f artisan ] && php artisan'
 
+# Gitignore helper
+gi() {
+  curl \
+    --output .gitignore \
+    --silent \
+    "https://raw.githubusercontent.com/github/gitignore/main/${1}.gitignore"
+  echo "Created .gitignore file for $1"
+}
+
 # Fig post block. Keep at the bottom of this file.
 . "$HOME/.fig/shell/zshrc.post.zsh"
