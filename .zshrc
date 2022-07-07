@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
 fpath+=~/.zfunc
 
 # Enable Homebrew ZSH completions
@@ -60,6 +58,3 @@ gi() {
     "https://raw.githubusercontent.com/github/gitignore/main/${1}.gitignore"
   echo "Created .gitignore file for $1"
 }
-
-# Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
