@@ -1,19 +1,12 @@
 fpath+=~/.zfunc
 
-# Enable Homebrew ZSH completions
+# Add Homebrew completions to FPATH
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
 fi
 
-export DENO_INSTALL="/Users/hunter/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
-
-# Enable ZSH completions
+# Enable completions
 autoload -Uz compinit
 compinit
 
