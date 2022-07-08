@@ -58,3 +58,7 @@ gi() {
     "https://raw.githubusercontent.com/github/gitignore/main/${1}.gitignore"
   echo "Created .gitignore file for $1"
 }
+
+# Deno
+export DENO_INSTALL="/Users/hunter/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
