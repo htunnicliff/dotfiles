@@ -8,7 +8,7 @@ fi
 
 # Enable completions
 autoload -Uz compinit
-compinit
+compinit -i
 
 # Enable `pure` prompt
 autoload -U promptinit; promptinit
@@ -55,9 +55,6 @@ gi() {
 # Deno
 export DENO_INSTALL="/Users/hunter/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
-
-# Bun completions
-[ -s "/Users/side/.bun/_bun" ] && source "/Users/side/.bun/_bun"
 
 # Bun
 export BUN_INSTALL="/Users/side/.bun"
