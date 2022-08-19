@@ -1,6 +1,5 @@
 [user]
   name = Hunter Tunnicliff
-  email = hunter@tunnicliff.co
 [pull]
   rebase = false
 [init]
@@ -10,3 +9,4 @@
 [alias]
   smoosh = commit --amend --no-edit --no-verify
   refresh = !git reset --hard && git clean -f
+  unstage = reset HEAD --
