@@ -10,3 +10,5 @@
   smoosh = commit --amend --no-edit --no-verify
   refresh = !git reset --hard && git clean -f
   unstage = reset HEAD --
+[includeIf "gitdir:~/Dev/"]
+    path = ~/Dev/.gitconfig
