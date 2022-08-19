@@ -59,3 +59,8 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # Bun
 export BUN_INSTALL="/Users/side/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/hunter/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
