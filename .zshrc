@@ -7,12 +7,19 @@ then
 fi
 
 # Enable completions
-autoload -Uz compinit
-compinit -i
+autoload -Uz compinit; compinit -i
 
 # Enable `pure` prompt
 autoload -U promptinit; promptinit
 prompt pure
+
+# Enable history search
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "$key[Up]" up-line-or-beginning-search # Up
+bindkey "$key[Down]" down-line-or-beginning-search # Down
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
