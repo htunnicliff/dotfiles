@@ -74,3 +74,6 @@ export PATH="$PNPM_HOME:$PATH"
 
 # Go
 export PATH="$HOME/go/bin:$PATH"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
