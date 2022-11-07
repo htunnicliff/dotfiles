@@ -71,3 +71,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PNPM_HOME="/Users/hunter/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# Go
+export PATH="$HOME/go/bin:$PATH"
