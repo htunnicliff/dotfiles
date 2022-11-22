@@ -38,7 +38,6 @@ alias c="git commit -m"
 alias co="git checkout"
 alias d="git diff"
 alias l="git log"
-alias p="git pull"
 alias last="git log -1 HEAD"
 alias unstage="git reset HEAD --"
 
@@ -71,6 +70,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PNPM_HOME="/Users/hunter/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# PNPM alias
+alias pn="pnpm"
 
 # Go
 export PATH="$HOME/go/bin:$PATH"
