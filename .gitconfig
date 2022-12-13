@@ -6,6 +6,7 @@
   defaultBranch = main
 [core]
   editor = nano
+  excludesFile = ~/.globalgitignore
 [alias]
   smoosh = commit --amend --no-edit --no-verify
   refresh = !git reset --hard && git clean -f
