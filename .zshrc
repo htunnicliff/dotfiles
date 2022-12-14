@@ -58,6 +58,9 @@ gi() {
   echo "Created .gitignore file for $1"
 }
 
+# Yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
 # Deno
 export DENO_INSTALL="/Users/hunter/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
