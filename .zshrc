@@ -35,7 +35,7 @@ fi
 alias s="git status"
 alias br="git branch"
 alias c="git commit -m"
-alias co="git checkout"
+alias co="git switch"
 alias d="git diff"
 alias l="git log"
 alias last="git log -1 HEAD"
