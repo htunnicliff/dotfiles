@@ -95,3 +95,8 @@ fi
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+# Composer Global
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="/Users/hunter/.local/bin:$PATH"
+
