@@ -100,3 +100,5 @@ fi
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="/Users/hunter/.local/bin:$PATH"
 
+# ASDF
+[[ -f "$HOME/.asdf/asdf.sh" ]] && . "$HOME/.asdf/asdf.sh"
