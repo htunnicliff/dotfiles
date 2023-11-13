@@ -13,3 +13,5 @@
   unstage = reset HEAD --
 [includeIf "gitdir:~/Dev/"]
     path = ~/Dev/.gitconfig
+[push]
+	autoSetupRemote = true
