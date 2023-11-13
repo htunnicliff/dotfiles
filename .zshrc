@@ -62,7 +62,7 @@ gi() {
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Deno
-export DENO_INSTALL="/Users/hunter/.deno"
+export DENO_INSTALL="/$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Bun
