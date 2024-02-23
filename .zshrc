@@ -1,5 +1,9 @@
 fpath+=~/.zfunc
 
+# Configure history
+export HISTFILE=~/.zsh_history
+setopt HIST_FIND_NO_DUPS
+
 # Add Homebrew completions to FPATH
 if type brew &>/dev/null
 then
