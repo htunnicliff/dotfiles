@@ -13,3 +13,7 @@
     path = ~/Dev/.gitconfig
 [push]
 	autoSetupRemote = true
+[diff]
+	algorithm = histogram
+[merge]
+	conflictStyle = zdiff3
