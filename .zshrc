@@ -46,9 +46,6 @@ alias l="git log"
 alias last="git log -1 HEAD"
 alias unstage="git reset HEAD --"
 
-# Volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Scripts
 export PATH="$HOME/Scripts:$PATH"
