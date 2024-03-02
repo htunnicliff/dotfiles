@@ -25,12 +25,7 @@ zle -N down-line-or-beginning-search
 bindkey "$key[Up]" up-line-or-beginning-search # Up
 bindkey "$key[Down]" down-line-or-beginning-search # Down
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nano'
-else
-  export EDITOR='nano'
-fi
+export EDITOR='nano'
 
 # Autojump
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
