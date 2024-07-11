@@ -100,8 +100,9 @@ fi
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-# ASDF
-[[ -f "$HOME/.asdf/asdf.sh" ]] && . "$HOME/.asdf/asdf.sh"
-
 # bun completions
 [ -s "/$HOME/.bun/_bun" ] && source "/$HOME/.bun/_bun"
+
+# Mise
+eval "$(/Users/hunter/.local/bin/mise activate zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
