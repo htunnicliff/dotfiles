@@ -17,3 +17,11 @@
 	algorithm = histogram
 [merge]
 	conflictStyle = zdiff3
+[diff]
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
