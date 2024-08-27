@@ -102,7 +102,3 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # bun completions
 [ -s "/$HOME/.bun/_bun" ] && source "/$HOME/.bun/_bun"
-
-# Mise
-eval "$(/Users/hunter/.local/bin/mise activate zsh)"
-eval "$(~/.local/bin/mise activate zsh)"
