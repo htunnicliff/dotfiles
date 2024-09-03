@@ -53,6 +53,12 @@ gi() {
 # PNPM alias
 alias pn="pnpm"
 
+# Go
+export PATH="$HOME/go/bin:$PATH"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
