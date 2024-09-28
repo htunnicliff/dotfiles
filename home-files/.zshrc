@@ -14,6 +14,12 @@ fi
 autoload -Uz compinit; compinit -i
 
 # Enable `pure` prompt
+if [[ ! -d $HOME/.zsh/pure ]]; then
+  mkdir -p "$HOME/.zsh"
+  git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+fi
+
+fpath+=($HOME/.zsh/pure)
 autoload -U promptinit; promptinit
 prompt pure
 
