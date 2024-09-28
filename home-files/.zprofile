@@ -1,5 +1,10 @@
 # Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ -a /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 
 # Mise
-eval "$(~/.local/bin/mise activate zsh)"
+if [[ -a ~/.local/bin/mise ]]; then
+  eval "$(~/.local/bin/mise activate zsh)"
+fi
