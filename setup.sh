@@ -19,3 +19,18 @@ for file in $(ls -a "$d/home-files"); do
     ln -s "$d/home-files/$file" "$HOME/$file"
   fi
 done
+
+if [[ ! -d "$HOME/Dev" ]]; then
+  echo "Creating dev directory"
+  mkdir "$HOME/Dev"
+fi
+
+if [[ ! -f "$HOME/Dev/.gitconfig" ]]; then
+  echo "Creating gitconfig"
+  echo "Enter your preferred git email"
+  read -r email
+  cat <<EOF > "$HOME/Dev/.gitconfig"
+[user]
+  email = "$email"
+EOF
+fi
