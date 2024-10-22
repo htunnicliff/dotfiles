@@ -1,7 +1,14 @@
 [user]
   name = Hunter Tunnicliff
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMLYbsVL91clD+FBeb3oyL23aVGRKicQxRFHlcKUI++q
 [pull]
   rebase = false
+[commit]
+  gpgsign = true
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [init]
   defaultBranch = main
 [core]
