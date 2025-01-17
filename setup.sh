@@ -14,9 +14,12 @@ for file in $(ls -a "$d/home-files"); do
     read -r replace
     if [[ $replace == "y" ]]; then
      ln -sf "$d/home-files/$file" "$HOME/$file"
+    else
+      echo "Skipping $file"
     fi
   else
     ln -s "$d/home-files/$file" "$HOME/$file"
+    echo "Linked $file"
   fi
 done
 
