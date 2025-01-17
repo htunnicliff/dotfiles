@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 init_dev_dir() {
   path="$HOME/Dev"
 
@@ -25,29 +27,37 @@ init_git_config() {
 }
 
 init_dotfiles() {
-  home_files=$(ls -a "./home-files")
-
-  for file in $home_files; do
-    echo "$file"
-    continue
-
-    # Skip the current and parent directory
-    if [[ "$file" == "." ]] || [[ "$file" == ".." ]]; then
-      continue
+  # Create any directories that don't exist
+  home_file_directories=$(find ./home-files -mindepth 1 -type d )
+  for dir_with_prefix in $home_file_directories; do
+    dir="$HOME/${dir_with_prefix#./home-files/}"
+    if [[ ! -d "$dir" ]]; then
+      mkdir -p "$dir"
+      echo "Created directory $dir"
+    else
+      echo "Directory $dir already exists"
     fi
+  done
+
+  # Create files that don't exist
+  home_files=$(find ./home-files -mindepth 1 -type f)
+  for local_path in $home_files; do
+    relative_path=${local_path#./home-files/}
+    abs_local_path=$(realpath "$local_path")
+    dest_path="$HOME/${local_path#./home-files/}"
 
     # If the file already exists, ask for confirmation and replace the file
-    if [[ -f "$HOME/$file" ]]; then
-      echo "File $file already exists in $HOME. Replace it? (y/n)"
+    if [[ -f "$dest_path" ]]; then
+      echo "File $relative_path already exists. Replace it? (y/n)"
       read -r replace
       if [[ $replace == "y" ]]; then
-      ln -sf "./home-files/$file" "$HOME/$file"
+        ln -sf "$abs_local_path" "$dest_path"
       else
-        echo "Skipping $file"
+        echo "Skipping $relative_path"
       fi
     else
-      ln -s "./home-files/$file" "$HOME/$file"
-      echo "Linked $file"
+      ln -s "$abs_local_path" "$dest_path"
+      echo "Linked $relative_path"
     fi
   done
 }
