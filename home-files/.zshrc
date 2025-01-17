@@ -1,5 +1,8 @@
 fpath+=~/.zfunc
 
+# Colors
+export CLICOLOR=auto
+
 # Configure history
 export HISTFILE=~/.zsh_history
 setopt HIST_FIND_NO_DUPS
