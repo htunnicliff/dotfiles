@@ -7,6 +7,11 @@ export CLICOLOR=auto
 export HISTFILE=~/.zsh_history
 setopt HIST_FIND_NO_DUPS
 
+# Enable `mise`
+if [[ ! -f $HOME/.local/bin/mise ]]; then
+  curl https://mise.run | sh
+fi
+
 # Add Homebrew completions to FPATH
 if type brew &>/dev/null
 then
@@ -61,12 +66,6 @@ gi() {
 
 # PNPM alias
 alias pn="pnpm"
-
-# Go
-export PATH="$HOME/go/bin:$PATH"
-
-# Rust
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # tabtab source for packages
 # uninstall by removing these lines
