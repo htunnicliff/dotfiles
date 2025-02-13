@@ -4,11 +4,14 @@
 "npm:@ast-grep/cli" = "latest"
 "npm:knip" = "latest"
 "npm:serve" = "latest"
+"pipx:httpie" = "latest"
 bat = "latest"
+colima = "latest"
 deno = "latest"
 difftastic = "latest"
 gh = "latest"
 jq = "latest"
+lima = "latest"
 node = "lts"
 python = "3.13"
 rclone = "latest"
@@ -16,3 +19,7 @@ rust = "latest"
 shellcheck = "latest"
 uv = "latest"
 yq = "latest"
+yt-dlp = "latest"
+
+[settings.pipx]
+uvx = true
