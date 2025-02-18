@@ -48,6 +48,12 @@ init_dotfiles() {
 
     # If the file already exists, ask for confirmation and replace the file
     if [[ -f "$dest_path" ]]; then
+      if [[ -n "$CODESPACES" ]]; then
+        echo "Detected codespaces. Appending files instead of replacing".
+        cat "$abs_local_path" >> "$dest_path"
+        continue
+      fi
+
       echo "File $relative_path already exists. Replace it? (y/n)"
       read -r replace
       if [[ $replace == "y" ]]; then
@@ -64,5 +70,10 @@ init_dotfiles() {
 
 
 init_dotfiles
-init_dev_dir
-init_git_config
+
+if [[ -n "$CODESPACES" ]]; then
+  echo "Detected codespaces. Skipping dev directory and git config setup"
+else
+  init_dev_dir
+  init_git_config
+fi
