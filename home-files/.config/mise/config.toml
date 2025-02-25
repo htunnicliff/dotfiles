@@ -21,5 +21,8 @@ uv = "latest"
 yq = "latest"
 yt-dlp = "latest"
 
+[settings]
+disable_backends = ["asdf"]
+
 [settings.pipx]
 uvx = true
