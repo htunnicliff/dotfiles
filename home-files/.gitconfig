@@ -19,7 +19,9 @@
 [includeIf "gitdir:~/Dev/"]
 	path = ~/Dev/.gitconfig
 [push]
+	default = simple
 	autoSetupRemote = true
+	followTags = true
 [diff]
 	algorithm = histogram
 [merge]
@@ -32,3 +34,20 @@
 	cmd = difft "$LOCAL" "$REMOTE"
 [pager]
 	difftool = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
