@@ -2,3 +2,5 @@ mise.local.toml
 _NOTES.md
 NOTES.local.md
 *.http
+hunter.code-workspace
+
