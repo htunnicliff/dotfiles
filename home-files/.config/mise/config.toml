@@ -20,6 +20,7 @@ shellcheck = "latest"
 uv = "latest"
 yq = "latest"
 yt-dlp = "latest"
+hyperfine = "latest"
 
 [settings]
 disable_backends = ["asdf"]
