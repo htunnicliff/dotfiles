@@ -34,8 +34,6 @@
 	cmd = difft "$LOCAL" "$REMOTE"
 [pager]
 	difftool = true
-[column]
-	ui = auto
 [branch]
 	sort = -committerdate
 [tag]
