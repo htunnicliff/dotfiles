@@ -2,17 +2,13 @@
 
 set -e
 
-NON_INTERACTIVE=0
-for arg in "$@"; do
-  if [[ $arg == "--non-interactive" ]]; then
-    NON_INTERACTIVE=1
-  fi
-done
-
-if [[ -n "$CODESPACES" ]]; then
-  NON_INTERACTIVE=1
+if [ -t 1 ]; then
+  INTERACTIVE=1
+  echo "Interactive shell detected"
+else
+  INTERACTIVE=0
+  echo "Interactive shell NOT detected"
 fi
-
 
 init_dev_dir() {
   path="$HOME/Dev"
@@ -28,17 +24,11 @@ init_dev_dir() {
 init_git_config() {
   path="$HOME/Dev/.gitconfig"
 
-  if [[ ! -f "$path" ]]; then
+  if [[ ! -f "$path" && $INTERACTIVE -eq 1 ]]; then
     echo "Creating gitconfig"
-    if [[ $NON_INTERACTIVE -eq 0 ]]; then
-      echo "Enter your preferred git email"
-      read -r email
-      git config --file "$path" user.email "$email"
-    else
-      echo "Git email not configured"
-    fi
-  else
-    echo "Dev gitconfig already exists"
+    echo "Enter your preferred git email"
+    read -r email
+    git config --file "$path" user.email "$email"
   fi
 }
 
@@ -64,7 +54,7 @@ init_dotfiles() {
 
     # If the file already exists, ask for confirmation and replace the file
     if [[ -f "$dest_path" ]]; then
-      if [[ $NON_INTERACTIVE -eq 0  ]]; then
+      if [[ $INTERACTIVE -eq 0  ]]; then
         echo "Noninteractive. Appending files instead of replacing".
         cat "$abs_local_path" >> "$dest_path"
         continue
