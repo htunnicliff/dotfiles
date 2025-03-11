@@ -2,6 +2,18 @@
 
 set -e
 
+NON_INTERACTIVE=0
+for arg in "$@"; do
+  if [[ $arg == "--non-interactive" ]]; then
+    NON_INTERACTIVE=1
+  fi
+done
+
+if [[ -n "$CODESPACES" ]]; then
+  NON_INTERACTIVE=1
+fi
+
+
 init_dev_dir() {
   path="$HOME/Dev"
 
@@ -18,9 +30,13 @@ init_git_config() {
 
   if [[ ! -f "$path" ]]; then
     echo "Creating gitconfig"
-    echo "Enter your preferred git email"
-    read -r email
-    git config --file "$path" user.email "$email"
+    if [[ $NON_INTERACTIVE -eq 0 ]]; then
+      echo "Enter your preferred git email"
+      read -r email
+      git config --file "$path" user.email "$email"
+    else
+      echo "Git email not configured"
+    fi
   else
     echo "Dev gitconfig already exists"
   fi
@@ -48,8 +64,8 @@ init_dotfiles() {
 
     # If the file already exists, ask for confirmation and replace the file
     if [[ -f "$dest_path" ]]; then
-      if [[ -n "$CODESPACES" ]]; then
-        echo "Detected codespaces. Appending files instead of replacing".
+      if [[ $NON_INTERACTIVE -eq 0  ]]; then
+        echo "Noninteractive. Appending files instead of replacing".
         cat "$abs_local_path" >> "$dest_path"
         continue
       fi
@@ -71,8 +87,8 @@ init_dotfiles() {
 
 init_dotfiles
 
-if [[ -n "$CODESPACES" ]]; then
-  echo "Detected codespaces. Skipping dev directory and git config setup"
+if [[ $NON_INTERACTIVE -eq 0 ]]; then
+  echo "Noninteractive. Skipping dev directory and git config setup"
 else
   init_dev_dir
   init_git_config
