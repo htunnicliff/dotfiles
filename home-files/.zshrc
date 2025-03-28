@@ -78,9 +78,9 @@ fi
 
 # Mise
 if [[ -a ~/.local/bin/mise ]]; then
-  if [[ "$TERM_PROGRAM" != 'vscode' ]]; then
+  if [ -t 1 ]; then
     eval "$(~/.local/bin/mise activate zsh)"
-  elif; then
+  else
     # When in VSCode, use shims
     eval "$(~/.local/bin/mise activate zsh --shims)"
   fi;
