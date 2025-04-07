@@ -85,3 +85,6 @@ if [[ -a ~/.local/bin/mise ]]; then
     eval "$(~/.local/bin/mise activate zsh --shims)"
   fi;
 fi
+
+# Node
+alias bignode="NODE_OPTIONS='--max-old-space-size=20480'"
