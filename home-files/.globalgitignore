@@ -3,4 +3,4 @@ _NOTES.md
 NOTES.local.md
 *.http
 hunter.code-workspace
-
+local.*
