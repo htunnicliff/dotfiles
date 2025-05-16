@@ -1,0 +1,28 @@
+[tools]
+"npm:knip" = "5.44.4"
+"npm:serve" = "14.2.4"
+"pipx:httpie" = "3.2.4"
+ast-grep = "0.38.1"
+bat = "0.25.0"
+deno = "2.2.0"
+difftastic = "0.63.0"
+fd = "10.2.0"
+gh = "2.67.0"
+hyperfine = "1.19.0"
+jq = "1.7.1"
+node = "22.15.0"
+python = "3.13.2"
+rclone = "1.69.1"
+ripgrep = "14.1.1"
+rust = "1.85.0"
+shellcheck = "0.10.0"
+ubi = "0.5.2"
+uv = "0.6.3"
+yq = "4.45.1"
+
+[settings]
+disable_backends = ["asdf"]
+idiomatic_version_file_enable_tools = ["python", "node"]
+
+[settings.pipx]
+uvx = true
