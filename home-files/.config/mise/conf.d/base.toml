@@ -23,6 +23,7 @@ yq = "4.45.1"
 [settings]
 disable_backends = ["asdf"]
 idiomatic_version_file_enable_tools = ["python", "node"]
+pin = true
 
 [settings.pipx]
 uvx = true
