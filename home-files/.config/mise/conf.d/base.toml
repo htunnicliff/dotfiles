@@ -4,6 +4,7 @@
 "pipx:httpie" = "3.2.4"
 ast-grep = "0.38.1"
 bat = "0.25.0"
+btop = "1.4.3"
 deno = "2.2.0"
 difftastic = "0.63.0"
 fd = "10.2.0"
