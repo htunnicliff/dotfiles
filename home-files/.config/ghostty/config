@@ -1,8 +1,7 @@
 font-family = "Rec Mono Duotone"
-theme = rebecca 
+theme = remedy-bright
 window-padding-x = 12
 window-padding-y = 8
-background = #3f3433 
 macos-icon = custom-style
 macos-icon-frame = beige
 macos-icon-ghost-color = #00d492
