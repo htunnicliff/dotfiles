@@ -4,7 +4,7 @@
 [pull]
 	rebase = false
 [commit]
-	gpgsign = true
+	gpgsign = false
 [gpg]
 	format = ssh
 [gpg "ssh"]
