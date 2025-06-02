@@ -88,3 +88,8 @@ fi
 
 # Node
 alias bignode="NODE_OPTIONS='--max-old-space-size=20480'"
+
+# Copilot
+alias gc="gh copilot"
+alias gcs="gh copilot suggest"
+alias gce="gh copilot explain"
