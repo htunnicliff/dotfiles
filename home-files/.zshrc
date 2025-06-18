@@ -93,3 +93,9 @@ alias bignode="NODE_OPTIONS='--max-old-space-size=20480'"
 alias gc="gh copilot"
 alias gcs="gh copilot suggest"
 alias gce="gh copilot explain"
+
+
+# Local zshrc
+if [[ -f ~/.config/zsh/.zshrc ]]; then
+  source ~/.config/zsh/.zshrc
+fi
