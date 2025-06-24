@@ -16,7 +16,8 @@
 	excludesFile = ~/.globalgitignore
 [alias]
 	smoosh = commit --amend --no-edit --no-verify
-	gone = "!c() { git branch -vv | grep ': gone]' | awk '{print $1}'; }; c"
+	gone = !git branch -vv | grep ': gone]' | awk '{print $1}'
+	local = !git branch -vv | grep -v '\\[origin/' | awk '{print $1}'
 [includeIf "gitdir:~/Dev/"]
 	path = ~/Dev/.gitconfig
 [push]
