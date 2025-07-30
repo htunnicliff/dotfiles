@@ -4,7 +4,13 @@ fpath+=~/.zfunc
 export CLICOLOR=auto
 
 # Configure history
-export HISTFILE=~/.zsh_history
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
 
 # Enable `mise`
