@@ -18,6 +18,7 @@
 	smoosh = commit --amend --no-edit --no-verify
 	gone = !git branch -vv | grep ': gone]' | awk '{print $1}'
 	local = !git branch -vv | grep -v '\\[origin/' | awk '{print $1}'
+	fsmoosh = !git commit -n --fixup
 [includeIf "gitdir:~/Dev/"]
 	path = ~/Dev/.gitconfig
 [push]
