@@ -19,10 +19,12 @@ shellcheck = "latest"
 ubi = "latest"
 uv = "latest"
 yq = "latest"
+gum = "latest"
 
 [settings]
 disable_backends = ["asdf"]
 idiomatic_version_file_enable_tools = ["python", "node"]
+experimental = true
 
 [settings.pipx]
 uvx = true
