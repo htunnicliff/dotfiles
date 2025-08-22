@@ -68,7 +68,7 @@ init_dotfiles() {
         echo "Skipping $relative_path"
       fi
     else
-      ln -s "$abs_local_path" "$dest_path"
+      ln -f -s "$abs_local_path" "$dest_path"
       echo "Linked $relative_path"
     fi
   done
