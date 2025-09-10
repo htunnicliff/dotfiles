@@ -21,6 +21,12 @@ uv = "latest"
 yq = "latest"
 gum = "latest"
 
+[tools."http:rename"]
+url = "http://plasmasturm.org/code/rename/rename"
+version = "1.601"
+checksum = "sha256:cf2c2f4a1ecce94b7520b416abd18f746d2be6a3515303809cf68c3d801bc21d"
+
+
 [settings]
 disable_backends = ["asdf"]
 idiomatic_version_file_enable_tools = ["python", "node"]
