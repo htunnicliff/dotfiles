@@ -19,6 +19,7 @@
 	gone = !git branch -vv | grep ': gone]' | awk '{print $1}'
 	local = !git branch -vv | grep -v '\\[origin/' | awk '{print $1}'
 	fsmoosh = !git commit -n --fixup
+	rebase-onto = "!f() { local CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD); local BASE_BRANCH=$(git rev-parse --abbrev-ref origin/HEAD | sed 's|^origin/||'); local MERGE_BASE=$(git merge-base \"$CURRENT_BRANCH\" \"$1\"); git rebase --onto \"$BASE_BRANCH\" \"$MERGE_BASE\" \"$CURRENT_BRANCH\"; }; f"
 [includeIf "gitdir:~/Dev/"]
 	path = ~/Dev/.gitconfig
 [push]
