@@ -57,6 +57,13 @@ alias d="git difftool"
 alias l="git log"
 alias last="git log -1 HEAD"
 alias unstage="git reset HEAD --"
+b() {
+  if ! command -v fzf >/dev/null 2>&1; then
+    echo "fzf is not installed. Please install fzf to use this function."
+    return 1
+  fi
+  git branch | fzf | xargs -I {} git checkout {}
+}
 
 # Scripts
 export PATH="$HOME/Scripts:$PATH"
