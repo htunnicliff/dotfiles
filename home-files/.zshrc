@@ -57,13 +57,7 @@ alias d="git difftool"
 alias l="git log"
 alias last="git log -1 HEAD"
 alias unstage="git reset HEAD --"
-b() {
-  if ! command -v fzf >/dev/null 2>&1; then
-    echo "fzf is not installed. Please install fzf to use this function."
-    return 1
-  fi
-  git branch | fzf | xargs -I {} git checkout {}
-}
+
 
 # Scripts
 export PATH="$HOME/Scripts:$PATH"
@@ -107,8 +101,29 @@ alias gc="gh copilot"
 alias gcs="gh copilot suggest"
 alias gce="gh copilot explain"
 
+# fzf bindings and autocompletion
+source <(fzf --zsh)
+
+# Use fzf to checkout git branches
+b() {
+  if [[ $# -gt 0 ]]; then
+    fzfArgs="--query "$@" --select-1"
+  else
+    fzfArgs=""
+  fi
+  git branch | fzf $fzfArgs | xargs -I {} git checkout {}
+}
+
 
 # Local zshrc
 if [[ -f ~/.config/zsh/.zshrc ]]; then
   source ~/.config/zsh/.zshrc
+fi
+
+# Enable ZSH bash-compatible completion system
+autoload -Uz bashcompinit && bashcompinit
+
+# Source bash-compatible completions
+if [[ -f /etc/zsh/bash-compatible-completions ]]; then
+  source /etc/zsh/bash-compatible-completions
 fi
