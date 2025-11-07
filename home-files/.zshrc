@@ -107,11 +107,14 @@ source <(fzf --zsh)
 # Use fzf to checkout git branches
 b() {
 	if [[ $# -gt 0 ]]; then
-		fzfArgs="--query "$@" --select-1"
+		git branch |
+			fzf --select-1 --exit-0 --query "$1" |
+			xargs -I {} git checkout {}
 	else
-		fzfArgs=""
+		git branch |
+			fzf |
+			xargs -I {} git checkout {}
 	fi
-	git branch | fzf $fzfArgs | xargs -I {} git checkout {}
 }
 
 # Local zshrc
