@@ -22,6 +22,7 @@ yq = "latest"
 gum = "latest"
 fzf = "latest"
 "ubi:asciinema/asciinema" = "latest"
+"npm:zx" = "latest"
 
 [tools."http:rename"]
 url = "http://plasmasturm.org/code/rename/rename"
