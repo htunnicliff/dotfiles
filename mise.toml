@@ -1,2 +1,4 @@
+min_version = { hard = "2026.6.14" }
+
 [tools]
 shellcheck = "latest"
