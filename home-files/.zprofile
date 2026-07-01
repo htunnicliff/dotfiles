@@ -10,3 +10,5 @@ if [[ ${ARCH} == arm* ]] && [[ ${OS} == Darwin ]] && [[ -f /opt/homebrew/bin/bre
 	BREW_ENV=$(/opt/homebrew/bin/brew shellenv)
 	eval "${BREW_ENV}"
 fi
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(mise activate zsh --shims)"
