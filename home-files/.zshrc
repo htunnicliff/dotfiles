@@ -129,3 +129,6 @@ autoload -Uz bashcompinit && bashcompinit
 if [[ -f /etc/zsh/bash-compatible-completions ]]; then
 	source /etc/zsh/bash-compatible-completions
 fi
+
+# opencode
+export PATH=/Users/hunter/.opencode/bin:$PATH
